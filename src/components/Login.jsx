@@ -11,20 +11,24 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const [alerta, setAlerta] = useState({ isShown: true, msg: '', variant: '' });
-    const [boton, setBoton] = useState('');
+    /*     const [boton, setBoton] = useState(true);
+    
+        const validarBoton = () => {
+            if (email !== '' || password !== '') {
+                setBoton(false)
+            }
+        } */
 
     const validarInput = (e) => {
         e.preventDefault();
 
         if (email === '' || password === '') {
-            setBoton(true);
+            setAlerta({ isShown: true, msg: 'Debes completar todos los campos.', variant: 'warning' });
             return;
         } else if (email.trim() === 'user@desafiolatam.cl' && password.trim() === 'desafiolatam123') {
-            setBoton(false);
             setAlerta({ isShown: true, msg: 'Usuario y contraseña correctos. Ingresando al sitio...', variant: 'info' });
             return;
         } else {
-            setBoton(false);
             setAlerta({ isShown: true, msg: 'El usuario o la contraseña ingresados son incorrectos.', variant: 'danger' });
             return;
         }
@@ -54,11 +58,15 @@ const Login = () => {
                 <Form.Check type="checkbox" label="Recordar este dispositivo" />
             </Form.Group>
 
-            <Button variant="primary" type="submit" disabled={boton}>
+            <Button variant="primary" type="submit" /* disabled={boton} */ >
                 Iniciar Sesión
             </Button>
+
+            <p>Pista <br></br>email: user@desafiolatam.cl <br></br>pass: desafiolatam123</p>
+
         </Form >
     );
 }
+
 
 export default Login;
