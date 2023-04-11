@@ -40,7 +40,6 @@ const Login = () => {
         <Form onSubmit={validarInput}>
             {alerta.isShown ? <Alert key={alerta.variant} variant={alerta.variant}>{alerta.msg}</Alert> : null}
 
-
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder="ejemplo@micorreo.cl" />
@@ -62,7 +61,7 @@ const Login = () => {
                 Iniciar Sesión
             </Button>
 
-            <p>Pista <br></br>email: user@desafiolatam.cl <br></br>pass: desafiolatam123</p>
+            <p>Pista <br></br>email: user@desafiolatam.cl <br></br> pass: desafiolatam123</p>
 
         </Form >
     );

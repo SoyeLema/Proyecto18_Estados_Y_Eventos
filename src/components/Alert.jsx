@@ -1,10 +1,9 @@
 import Alert from 'react-bootstrap/Alert';
 
+const Alertas = (props) => {
 
-const Alertas = () => {
-
-    <Alert key={alerta.variant} variant={alerta.variant}>
-        {alerta.msg}
+    <Alert key={props.variant} variant={props.variant}>
+        {props.msg}
     </Alert>
 
 }
